@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, height=device-height, initial-scale=1.0 user-scalable=no" name="viewport" />
+    <meta name="MobileOptimized" content="320">
+    <meta name="keywords" content="BankID, bankid, exempel">
+    <meta name="description" content="En exempelapplikation som använder pybankid (BankID-klient i Python).">
+    <meta name="expires" content="never">
+    <meta name="language" content="SE">
+    <meta name="revisit-after" content="14 days">
+    <meta name="distribution" content="global">
+    <meta name="robots" content="index,follow">
+    <meta name="copyright" content="Copyright © Henrik Blidh">
+
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>BankIdExampleApp Page</title>
+    {% endif %}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Adding Font Awesome for icons. -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <hr>
+            </div>
+            <div class="col-xs-12">
+                <a href="/"><strong>PyBankID Example App</strong></a>
+            </div>
+            <div class="col-xs-12">
+                <hr>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="row">
+                    <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- JAVASCRIPTS -->
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- JQUERY UI-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!-- BOOTSTRAP - Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+{% block js %}{% endblock %}
+</html>
