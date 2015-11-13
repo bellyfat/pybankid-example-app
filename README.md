@@ -76,7 +76,7 @@ TBD.
 #### iOS
 
 Using `redirect=null` on iOS results in a correct opening of the BankID app, but never closes it after signing
-is complete. On iOS > 9.0, a "Back to <browser_name>"-option is present in the top left corner of the screen, but on 
+is complete. On iOS > 9.0, a "Back to *BrowserName*"-option is present in the top left corner of the screen, but on 
 earlier versions one is left with the only opportunity to reopen the used browser manually.
  
 #### Android
