@@ -24,7 +24,7 @@ import json
 import datetime
 
 from flask import render_template, jsonify
-from bankid.client import BankIDClient
+from bankid import BankIDClient
 
 from bankidexampleapp import app
 from bankidexampleapp.forms import BankIdSignForm
