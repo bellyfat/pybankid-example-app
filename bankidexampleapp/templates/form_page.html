@@ -248,6 +248,10 @@
             self.collect_status("");
             $.get("/api/collect/" + self.orderref(), function (data) {
                 self.collect_status(data.progressStatus);
+                if (data.progressStatus() == 'COMPLETE') {
+                    self.collect_results(JSON.stringify(data));
+                    $("#signForm").submit();
+                }
             });
         };
 
