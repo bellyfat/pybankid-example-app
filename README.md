@@ -1,6 +1,6 @@
 # PyBankID Example Web Application
 
-**Version 1.0.1**
+**Version 1.0.2**
 
 Simple example web application showing how [pybankid](https://github.com/hbldh/pybankid)
 can be used for web applications.
