@@ -217,20 +217,35 @@
         };
 
         self.initiateAuthenticateClicked = function() {
-            $.get("/api/authenticate/" + self.nationalidnumber(), function (data) {
-                self.autostarttoken(data.autoStartToken);
-                self.orderref(data.orderRef);
-                self.setAutoStartLinks();
-                self.setButtonEnabling(false);
+            $.ajax({
+                type: "GET",
+                url: "/authenticate/" + self.nationalidnumber(),
+                error: function(xhr, statusText) {
+                    self.collect_results(xhr.responseJSON.message);
+                },
+                success: function(data){
+                    self.autostarttoken(data.autoStartToken);
+                    self.orderref(data.orderRef);
+                    self.setAutoStartLinks();
+                    self.setButtonEnabling(false);
+                }
             });
         };
 
         self.initiateSignClicked = function() {
-            $.get("/api/sign/" + self.nationalidnumber(), function (data) {
-                self.autostarttoken(data.autoStartToken);
-                self.orderref(data.orderRef);
-                self.setAutoStartLinks();
-                self.setButtonEnabling(false);
+            $.ajax({
+                type: "GET",
+                url: "/sign/" + self.nationalidnumber(),
+                data: { 'userVisibleData': 'Signera från BankIDEampleApp, Personnummer: ' + self.nationalidnumber() },
+                error: function(xhr, statusText) {
+                    self.collect_results(xhr.responseJSON.message);
+                },
+                success: function(data){
+                    self.autostarttoken(data.autoStartToken);
+                    self.orderref(data.orderRef);
+                    self.setAutoStartLinks();
+                    self.setButtonEnabling(false);
+                }
             });
         };
 
@@ -246,11 +261,18 @@
 
         self.collectButtonClicked = function() {
             self.collect_status("");
-            $.get("/api/collect/" + self.orderref(), function (data) {
-                self.collect_status(data.progressStatus);
-                if (data.progressStatus() == 'COMPLETE') {
-                    self.collect_results(JSON.stringify(data));
-                    $("#signForm").submit();
+            $.ajax({
+                type: "GET",
+                url: "/collect/" + self.orderref(),
+                error: function(xhr, statusText) {
+                    self.collect_results(xhr.responseJSON.message);
+                },
+                success: function(data){
+                    self.collect_status(data.progressStatus);
+                    if (data.progressStatus == 'COMPLETE') {
+                        self.collect_results(JSON.stringify(data));
+                        $("#signForm").submit();
+                    }
                 }
             });
         };

@@ -1,9 +1,10 @@
 # PyBankID Example Web Application
 
-**Version 1.1.0**
+**Version 1.2.0**
 
 Simple example web application showing how [pybankid](https://github.com/hbldh/pybankid)
-can be used for web applications.
+can be used for web applications, using the [Flask](http://flask.pocoo.org/) web application framework
+and the [Flask-PyBankID](https://github.com/hbldh/flask-pybankid)) extension.
 
 A running instance of it can be found at 
 [https://bankid-example-app.herokuapp.com/](https://bankid-example-app.herokuapp.com/).

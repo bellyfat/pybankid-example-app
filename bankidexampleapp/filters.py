@@ -4,12 +4,7 @@
 :mod:`filters.py`
 ==================
 
-.. module:: filters.py
-   :platform: Unix, Windows
-   :synopsis: 
-
-.. moduleauthor:: hbldh <henrik.blidh@swedwise.com>
-
+.. moduleauthor:: hbldh <henrik.blidh@nedomkull.com>
 Created on 2014-09-11, 15:37
 
 """
