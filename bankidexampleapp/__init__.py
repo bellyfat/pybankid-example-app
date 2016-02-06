@@ -7,6 +7,3 @@ from flask_pybankid import PyBankID
 app = Flask(__name__)
 app.config.from_object('bankidexampleapp.config')
 bankid = PyBankID(app)
-
-from bankidexampleapp import views
-from bankidexampleapp import filters

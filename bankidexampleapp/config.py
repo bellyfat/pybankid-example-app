@@ -11,7 +11,6 @@ Created on 2014-09-09, 15:47
 
 import os
 
-CSRF_ENABLED = True
 SECRET_KEY = 'jfkldsjlfkjdslkfjdslkjffdsje339483'
 
 PYBANKID_CERT_PATH = os.path.join(os.path.dirname(__file__), 'keys/cert.pem')
