@@ -12,7 +12,8 @@ Created on 2014-09-09, 15:47
 import os
 
 CSRF_ENABLED = True
-SECRET_KEY = 'jfkldsjlfkjdslkfjdslkjffdsje339483'
+SECRET_KEY = os.environ.get('PYBANKIDEXAMPLE_APP_SECRET',
+                            'notverysecretdefaultkey')
 
 PYBANKID_CERT_PATH = os.path.join(os.path.dirname(__file__), 'keys/cert.pem')
 PYBANKID_KEY_PATH = os.path.join(os.path.dirname(__file__), 'keys/key.pem')

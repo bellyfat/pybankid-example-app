@@ -16,6 +16,7 @@ from __future__ import absolute_import
 
 from bankidexampleapp import app
 
+
 @app.template_filter('swedate')
 def swedate(s):
     return s.strftime("%Y-%m-%d %H:%M:%S")
