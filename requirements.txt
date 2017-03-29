@@ -3,4 +3,4 @@ Flask-WTF>=0.14.2
 gunicorn>=19.6.0
 requests>=2.13.0
 suds-jurko>=0.6
-Flask-PyBankID>=0.2.0
+Flask-PyBankID>=0.3.0
