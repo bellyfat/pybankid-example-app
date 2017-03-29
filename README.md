@@ -1,6 +1,6 @@
 # PyBankID Example Web Application
 
-**Version 1.5.0**
+**Version 1.5.1**
 
 Simple example web application showing how [pybankid](https://github.com/hbldh/pybankid)
 can be used for web applications, using the [Flask](http://flask.pocoo.org/) web application framework

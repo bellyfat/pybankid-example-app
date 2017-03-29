@@ -176,7 +176,7 @@
 
             function collect(){
 
-                $.get("/api/collect/" + self.orderref(), function (data) {
+                $.get("/collect/" + self.orderref(), function (data) {
                     self.collect_status(data.progressStatus);
                     if (data.progressStatus == 'COMPLETE') {
                         self.clear_collecting_interval();
@@ -236,7 +236,7 @@
             $.ajax({
                 type: "GET",
                 url: "/sign/" + self.nationalidnumber(),
-                data: { 'userVisibleData': 'Signera från BankIDEampleApp, Personnummer: ' + self.nationalidnumber() },
+                data: { 'userVisibleData': 'Signera från BankIDExampleApp, Personnummer: ' + self.nationalidnumber() },
                 error: function(xhr, statusText) {
                     self.collect_results(xhr.responseJSON.message);
                 },
